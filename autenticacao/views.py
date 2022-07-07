@@ -4,7 +4,10 @@ from django.http import HttpResponse
 
 # Create your views here.
 def register(request):
-    return render(request, 'register.html')    
+    if request.method == 'GET':
+        return render(request, 'register.html')
+    elif request.method == 'POST':
+        return HttpResponse('entrou')
 
 def login(request):
     return HttpResponse('Bem vindo, faça login')
