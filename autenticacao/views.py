@@ -18,8 +18,6 @@ def register(request):
         else:
             return HttpResponse(f'Seja bem vindo {usuario}')
         
-
-            
-
+        
 def login(request):
     return HttpResponse('Bem vindo, faça login')
