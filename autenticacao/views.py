@@ -1,4 +1,3 @@
-from ssl import ALERT_DESCRIPTION_ACCESS_DENIED
 from .utils import password_is_valid
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
@@ -11,12 +10,11 @@ def register(request):
     if request.method == 'POST':
         usuario = request.POST.get('usuario')
         email = request.POST.get('email')
-        senha = request.POST.get('senha')
-        confSenha = request.POST.get('confimar_senha')
+        senha = request.POST.get('password')
+        confSenha = request.POST.get('confirm_password')
         if not password_is_valid(request, senha, confSenha):
             return redirect("/auth/register")
-        else:
-            return HttpResponse(f'Seja bem vindo {usuario}')
+        return HttpResponse(f'Seja bem vindo {usuario}')
         
         
 def login(request):
