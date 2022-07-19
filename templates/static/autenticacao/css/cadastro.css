@@ -12,10 +12,10 @@
     background-image: url("/static/autenticacao/imgs/fundo_background.png");
 }
 .area_cadastrar{
-    margin-top: 8%;
+    margin-top: 4%;
     margin-left: 15%;
     width: 70%;
-    height: 70vh;
+
 }
 .titulo{
     font-weight: bold;
@@ -45,4 +45,6 @@
     color: white;
     font-weight: bold;
 }
-
+.login_button_redirect{
+    margin-top:20px
+}
