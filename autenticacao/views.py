@@ -34,4 +34,4 @@ def register(request):
         return redirect("/auth/register")
 
 def login(request):
-    return HttpResponse('Bem vindo, faça login')
+    return render(request, 'login.html')
