@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block 'head' %}
-<link rel="stylesheet" href="{% static 'autenticacao/css/css.css' %}" />
+<link rel="stylesheet" href="{% static 'autenticacao/css/cadastro.css' %}" />
 {% endblock %}
 
 {% block 'titulo' %}Cadastre-se{% endblock %}
@@ -15,7 +15,7 @@
         <h2 class="logo">
           <img
             class="img_logo_sidebar"
-            src="{% static 'autenticacao/img/logo_nutri_lab.png' %}"
+            src="{% static 'autenticacao/imgs/logo_nutri_lab.png' %}"
           />
         </h2>
       </div>
@@ -33,7 +33,7 @@
         <p class="sub-titulo">Entre com sua conta</p>
         <hr />
         
-        <form action="" method="POST">
+        <form action="{% url 'logar' %}" method="POST">
           {% csrf_token %}
           <span class="bold">Nome de usuário</span>
           <input
@@ -53,9 +53,9 @@
           <br />
           <button class="btn-first">Logar</button>
         </form>
-        <h3 style="position: absolute; bottom: 65px; font-weight: bold">
+        <h3 style="margin-top: 20px;">
           Não tem uma conta ?&nbsp
-          <a class="btn btn-outline-success btn-lg">Registre-se</a>
+          <a href="{% url 'cadastrar' %}" class="btn btn-outline-success btn-lg">Registre-se</a>
         </h3>
       </div>
     </div>
